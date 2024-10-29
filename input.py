@@ -1,0 +1,5 @@
+nome = input("Qual é o seu nome")
+Instituição = input("Onde você estuda")
+Turma = input("Qual a sua turma")
+Curso = input("Qual o seu curso?")
+print (f"Boa tarde {nome} do {Instituição} da turma {Turma} do curso {Curso}")
