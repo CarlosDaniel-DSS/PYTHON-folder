@@ -21,7 +21,8 @@ def calculadora ():
     "/": divisão,
     }
 
-    # define que, para cada operador dentro da lista de operações, n1 e n2 receberão o operador da expressão e que poderão ser digitados com decimais.
+    '''define que, para cada operador dentro da lista de operações, n1 e n2 receberão o operador da expressão, 
+    poderão ser digitados com decimais e apresenta o resultado da expressão'''
     for operador in operações:
         if operador in expressão:
             try:
