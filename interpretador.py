@@ -46,7 +46,7 @@ def multiplicação (n1, n2):
 def divisão (n1, n2):
     if n2 == 0:
         return "Error: Divisão por zero!"
-    else
+    else:
         return n1 / n2
 
 
