@@ -30,13 +30,20 @@ def main():
                
 main()'''
 
+
 '''
-x = 3.15
+
+#questão 10:,
+
+x =  3.15
 x = str(x)
-x = x.split(".")
+x = x.split(x)
+print(x)
 
+#ou
+
+x = float(x) - int(x)
+print(x)
+
+x = int(x)
 print(x)'''
-
-
-
-
