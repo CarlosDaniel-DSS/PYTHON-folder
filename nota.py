@@ -1,31 +1,19 @@
-def main(): 
-    nota = float(input("Nota do estudante:"))
+nota = float(input("Digite uma nota: "))
 
-    result_nota = verificar_nota(nota)
+#Somente "parabéns"
+if nota >=7 and nota >= 9:
+    print("Parabéns")
 
-    print(f"A sua nota {nota} é {result_nota}.")
+#Somente "aprovado"
+if nota >=7 and not(nota >=9):
+    print("Aprovado")
 
-def verificar_nota(nota):
-    if 0 <= nota < 10:
-        return "F"
-    elif 9 < nota < 20:
-        return "C-"
-    elif 19 < nota < 30:
-        return "C"
-    elif 29 < nota < 40:
-        return "C+"
-    elif 39 < nota < 50:
-        return "B-"
-    elif 49 < nota < 60:
-        return "B"
-    elif 59 < nota < 70:
-        return "B+"
-    elif 69 < nota < 80:
-        return "A-"
-    elif 79 < nota < 90:
-        return "A"
-    else: 
-        if 89 < nota <= 100:
-            return "A+"
+#Somente "recuperação"
+if not(nota >=7) and nota >=4:
+    print("Recuperação")
 
-main()
+#Somente "reprovado"
+if not(nota >=7) and not(nota >=4):
+    print("Reprovado")
+    
+    

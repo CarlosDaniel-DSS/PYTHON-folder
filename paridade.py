@@ -1,14 +1,15 @@
-def main ():
-    # Solicita um número de entrada
-    num = int(input("Digite número:"))
-    
-    # Verifica se é par
-    if verificar_par(num):
-        print (f"{num} é par")
+def main():
+    try:
+        n = float(input("Digite um número: "))
+    except ValueError:
+        print("Número inválido! Por favor tente novamente.")
+        print("-------------------------------------------")
+        main()
     else:
-        print (f"{num} é ímpar")    
-    
-def verificar_par(num):
-    return num % 2 == 0
+        if n % 2 == 0:
+            print("O número é par!")
+        else:
+            print("O número é impar")
+        print("----------------")
 
 main()
