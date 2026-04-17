@@ -1,0 +1,60 @@
+def main():
+    try:
+        print("-----------------------------------------------------------------------------")
+        print("[Dados do solicitante]")
+        
+        #Solicitando dados do usuário
+        renda_mensal = float(input("Digite sua Renda mensal: "))
+        idade= int(input("Informe sua idade(valor numérico): "))
+        historico_creditos = input("Qual o seu histórico de créditos? (responda com 'bom' ou 'ruim': )").lower
+        score = float(input("Qual o seu score? (0 a 10: "))
+        credito_solicitado = float(input("Informe a quantida de crédito desejada: "))
+        parcelas_solicitadas = int(input("Em quantas parcelas deseja pagar? "))
+        
+        print("-----------------------------------------------------------------------------")
+        
+    except ValueError():
+        print("Valor inválido! Tente novamente")
+        print("-------------------------------")
+        return main()
+    else:
+        #Casos de crédito negado imediatamente
+        if historico_creditos == "ruim":
+            print("Crédito Negado: Histórico com restrições.")
+        elif historico_creditos == "bom:":
+            if idade <18 or idade > 60:
+                print("Crédito Negado: Fora da faixa etária permitida.")
+            else:
+                #Definição do Valor do Crédito
+                if renda_mensal<= 2000.00:
+                    limite = 0
+                elif renda_mensal <= 5000.00:
+                    limite = 50000.00
+                elif renda_mensal <= 8000.00:
+                    limite = 50000.00
+                elif renda_mensal <= 14000.00:
+                    limite = 300000.00
+                else:
+                    limite = 0
+                
+                #Definição do prazo de financiamento
+                if idade > 18 and idade <= 30:
+                    if score >= 7:
+                        prazo = "35 anos."   
+                    else: 
+                        prazo = "25 anos" 
+                elif idade >= 31 and idade <= 60:
+                    if score >= 7:
+                        prazo = "25 anos"   
+                    else: 
+                        prazo = "15 anos"
+                
+                #Verificação de viabilidade da parcela
+                parcela = parcelas_solicitadas * 12
+                if parcela > 0.25 * renda_mensal:
+                    print("Crédito Negado: Valor da parcela excede o limite de comprometimento de renda.")
+                else:
+                    if credito_solicitado <= limite:
+                        print(f"Crédito aprovado! Valor: R${credito_solicitado:.2f}, em {prazo} anos, com parcelas de R${parcela}.")
+
+        main()
