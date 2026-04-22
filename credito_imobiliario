@@ -57,9 +57,8 @@ def main():
                     if credito_solicitado <= limite:
                         print(f"Crédito aprovado! Valor: R${credito_solicitado:.2f}, em {prazo} anos, com parcelas de R${parcela}.")
                     else:
-                        print("problema aqui")   
+                        print("Crédito negado!")   
                         
-        else:
-            print("sei lá")                
+                    
                 
 main()
