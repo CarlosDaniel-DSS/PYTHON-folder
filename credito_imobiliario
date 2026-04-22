@@ -6,14 +6,14 @@ def main():
         #Solicitando dados do usuário
         renda_mensal = float(input("Digite sua Renda mensal: "))
         idade= int(input("Informe sua idade(valor numérico): "))
-        historico_creditos = input("Qual o seu histórico de créditos? (responda com 'bom' ou 'ruim': )").lower
+        historico_creditos = input("Qual o seu histórico de créditos? (responda com 'bom' ou 'ruim'): ").lower()
         score = float(input("Qual o seu score? (0 a 10: "))
         credito_solicitado = float(input("Informe a quantida de crédito desejada: "))
         parcelas_solicitadas = int(input("Em quantas parcelas deseja pagar? "))
         
         print("-----------------------------------------------------------------------------")
         
-    except ValueError():
+    except ValueError:
         print("Valor inválido! Tente novamente")
         print("-------------------------------")
         return main()
@@ -21,7 +21,7 @@ def main():
         #Casos de crédito negado imediatamente
         if historico_creditos == "ruim":
             print("Crédito Negado: Histórico com restrições.")
-        elif historico_creditos == "bom:":
+        elif historico_creditos == "bom":
             if idade <18 or idade > 60:
                 print("Crédito Negado: Fora da faixa etária permitida.")
             else:
@@ -56,5 +56,10 @@ def main():
                 else:
                     if credito_solicitado <= limite:
                         print(f"Crédito aprovado! Valor: R${credito_solicitado:.2f}, em {prazo} anos, com parcelas de R${parcela}.")
-
-        main()
+                    else:
+                        print("problema aqui")   
+                        
+        else:
+            print("sei lá")                
+                
+main()
