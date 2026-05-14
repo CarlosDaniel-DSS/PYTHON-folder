@@ -14,6 +14,6 @@ if not(nota >=7) and nota >=4:
 
 #Somente "reprovado"
 if not(nota >=7) and not(nota >=4):
+    
     print("Reprovado")
-    
-    
+                                                                                                                                                             

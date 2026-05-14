@@ -10,7 +10,7 @@ def main():
     except ValueError:
         print("Valor inválido! Por favor, tente novamente.")
         print("-------------------------------------------")
-        main()
+        return main()
     else:
         #Infração em via urbana
         if via == "urbana" and vel_carro > 60:
