@@ -1,3 +1,5 @@
+#Cifrando mensagens com arquivo e cifra de césar (deslocamento com chave)
+
 '''def criptografia_de_mensagens():
     
     palavra = ""
@@ -66,15 +68,13 @@
             arquivo.close()
 criptografia_de_mensagens()'''
 
+# Cifrando com cifra de césar(deslocamento com chave) e escrevendo em um arquivo
 def criptografia_de_mensagens():
     
     palavra = ""
     palavra_criptografada = ""
     lista_palavras = []
     lista_criptografadas = []
-    valor_ascii = 0
-    ascii_A = ord('A')
-    ascii_a = ord('a')
     cnt = 0
     
     #Pedindo a chave da criptografia de todas as palvras
@@ -96,15 +96,13 @@ def criptografia_de_mensagens():
                 for letra in palavra:
                     # Mantém letras maiúsuclas
                     if 'A' <= letra <= 'Z':
-                        nova_letra = chr((ord(letra) - ord('A') + chave) % 26 + ord('A'))
-                        inverter = ord(nova_letra)- 60
-                        nova_letra = chr(90 - inverter)
+                        nova_letra = (ord(letra) - ord('A') + chave) % 26 
+                        nova_letra = chr(90 - nova_letra)
 
                     # Mantém letras minúsculas
                     elif 'a' <= letra <= 'z':
-                        nova_letra = chr((ord(letra) - ord('a') + chave) % 26 + ord('a'))
-                        inverter = ord(nova_letra)- 97
-                        nova_letra = chr(122 - inverter)
+                        nova_letra = (ord(letra) - ord('a') + chave) % 26
+                        nova_letra = chr(122 - nova_letra)
                         
                     # Mantém caracteres especiais e números
                     else:
